@@ -1,15 +1,17 @@
+
+
 <html>
     <head>
         <title>django girls blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     </head>
-    <body>
+
+    {% for post in posts %}
         <div>
-            <h1><a href="">django girls</a></h1>
+            <p>published : {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
-    <div>
-        <p>published</p>
-        <h2><a href="">my first post</a></h2>
-        <p>dsd</p>
-    </div>
-    </body>
+    {% endfor %}
 </html>
